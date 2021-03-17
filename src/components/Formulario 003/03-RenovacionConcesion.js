@@ -1,6 +1,9 @@
 import React from 'react'
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
+import { Link } from 'react-router-dom';
+
+import { insertarDatosForm003 } from '../../helpers/database';
 
 import { 
     DatosGenerales, 
@@ -21,6 +24,7 @@ import {
 } from './CamposForm003'
 
 
+
 const Validations = Yup.object().shape({
     ...datosGeneralesvalidations,
     ...representanteLegalValidations
@@ -29,8 +33,12 @@ const Validations = Yup.object().shape({
 export const RenovacionConcesion = () => {
     return (
         <>
-            <div className='divtainer p-5'>
-                <h5 className="text-center mb-3">FORMULARIO DE SOLICITUD DE RENOVACION DE CONCESION</h5>
+            <div className="form__header">
+                <Link to="./Home" className="form__ruta" >Formularios / </Link><small className="text-muted">FORMULARIO DE SOLICITUD DE RENOVACION DE CONCESION</small>
+                <p className="form__formName">FORMULARIO DE SOLICITUD DE RENOVACION DE CONCESION</p>
+            </div>
+
+            <div className='divtainer'>
                 <Formik
                     initialValues={{
                         IdFormulario:"003",
@@ -41,7 +49,8 @@ export const RenovacionConcesion = () => {
                     validationSchema={Validations}
                     onSubmit={(datos) => {
                         // same shape as initial values
-                        alert(JSON.stringify(datos, null, 2));
+                        // alert(JSON.stringify(datos, null, 2));
+                        insertarDatosForm003(datos)
                     }}
                     >
 

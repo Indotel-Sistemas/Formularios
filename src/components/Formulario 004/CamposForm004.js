@@ -10,37 +10,37 @@ export const CamposForm004 = ({ errors, touched }) => {
     return (
         <>
           
-            <h5 className=" navbar navbar-light bg-light px-3 mt-4">Formulario de Solicitud del Servicio</h5>
-
+            <p className="form__title">Formulario de Solicitud</p>
             <div className="px-3">
 
                 <div className="form-group">
+                    <p className="form__subtitle">Números NXX</p>
                     {/*Números de NXX solicitados--------------------------------------------------------------------------- */}
                     <div className='col-6'>
-                        <label>Números de NXX solicitados</label>
-                        <Field name='NumNxxSolicitados' type='text' className='form-control'  autoComplete="off"/>
+                        {/* <label>Números de NXX solicitados</label> */}
+                        <Field name='NumNxxSolicitados' placeholder="Número de NXX solicitado" type='number' className='form-control'  autoComplete="off"/>
                         {errors.NumNxxSolicitados && touched.NumNxxSolicitados ? (
                             <small className='text-danger'>{errors.NumNxxSolicitados}</small>
                         ) : null}
                     </div>
                     {/*Números de NXX asignados--------------------------------------------------------------------------- */}
-                    <div className='col-6'>
-                        <label>Números de NXX asigandos</label>
-                        <Field name='NumNxxAsignados' type='text' className='form-control'  autoComplete="off"/>
+                    <div className='col-6 mt-3'>
+                        {/* <label>Números de NXX asigandos</label> */}
+                        <Field name='NumNxxAsignados' placeholder="Número de NXX asigando" type='number' className='form-control'  autoComplete="off"/>
                         {errors.NumNxxAsignados && touched.NumNxxAsignados ? (
                             <small className='text-danger'>{errors.NumNxxAsignados}</small>
                         ) : null}
                     </div>
-                    {/*Números de NXX disponibles--------------------------------------------------------------------------- */}
-                    <div className='col-6'>
-                        <label>Números de NXX disponibles</label>
-                        <Field name='NumNxxDisponibles' type='text' className='form-control'  autoComplete="off"/>
-                        {errors.NumNxxDisponibles && touched.NumNxxDisponibles ? (
-                            <small className='text-danger'>{errors.NumNxxDisponibles}</small>
+                    {/*Números de NXX disponible--------------------------------------------------------------------------- */}
+                    <div className='col-6 my-3 '>
+                        {/* <label>Números de NXX disponible</label> */}
+                        <Field name='NumNxxDisponible' placeholder="Número de NXX disponible" type='number' className='form-control'  autoComplete="off"/>
+                        {errors.NumNxxDisponible && touched.NumNxxDisponible ? (
+                            <small className='text-danger'>{errors.NumNxxDisponible}</small>
                         ) : null}
                     </div>
                 
-                    <h6 className="mt-3">Señalar disposiciones están siendo consideradas: </h6>
+                    <p className="form__subtitle">Señalar disposiciones están siendo consideradas: </p>
                     < ReglamentosVigentes IdFormulario='004'   />
 
                 </div>
@@ -54,14 +54,14 @@ export const CamposForm004 = ({ errors, touched }) => {
 export const CamposForm4Validations = {
     NumNxxSolicitados: Yup.string().required('Campo requerido'),
     NumNxxAsignados: Yup.string().required('Campo requerido'),
-    NumNxxDisponibles: Yup.string().required('Campo requerido'),
+    NumNxxDisponible: Yup.string().required('Campo requerido'),
 }
 
 
 export const CamposForm4InitialValues = {
     NumNxxSolicitados: '',
     NumNxxAsignados: '',
-    NumNxxDisponibles: '',
+    NumNxxDisponible: '',
     ...ReglamentosVigentesInitialValues
 }
 

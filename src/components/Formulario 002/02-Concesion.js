@@ -1,6 +1,9 @@
 import React from 'react'
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
+import { Link } from 'react-router-dom';
+
+import { insertarDatosForm002 } from '../../helpers/database';
 
 import { 
     DatosGenerales, 
@@ -30,9 +33,12 @@ export const Concesion = () => {
     return (
          <>
     
-            <div className='divtainer p-5'>
+            <div className="form__header">
+                <Link to="./Home" className="form__ruta" >Formularios / </Link><small className="text-muted">FORMULARIO SOLICITUD DE CONCESION</small>
+                <p className="form__formName">FORMULARIO SOLICITUD DE CONCESION</p>
+            </div>
+            <div className='divtainer'>
         
-                <h5 className="text-center mb-3">FORMULARIO SOLICITUD DE CONCESION</h5>
                 <Formik
                     initialValues={{
                         IdFormulario:"002",
@@ -43,7 +49,7 @@ export const Concesion = () => {
                     validationSchema={Validations}
                     onSubmit={(datos) => {
                         // same shape as initial values
-                        alert(JSON.stringify(datos, null, 2));
+                        insertarDatosForm002(datos);
                     }}
                     >
 

@@ -100,7 +100,7 @@ export const ReglamentosVigentes = ({ IdFormulario }) => {
             {/*OTRAS--------------------------------------------------------------------------- */}
             {/* Se muestra en todos los formularios */}
             <div className='col-12'> 
-                <h6>Otros Reglamentos:</h6> 
+                <p className="form__subtitle">Otros Reglamentos:</p>
                 <Field name='OtroReglamento' as='textarea' className='form-control'  autoComplete="off"/>
             </div>
             

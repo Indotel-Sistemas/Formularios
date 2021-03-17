@@ -10,12 +10,11 @@ export const CamposForm6 = ({ errors, touched }) => {
     return (
         <>
           
-            <h5 className=" navbar navbar-light bg-light px-3 mt-4">Formulario de Solicitud del Servicio</h5>
-
+            <p className="form__title">Formulario de Solicitud</p>
             <div className="px-3">
 
                 <div className="form-group">
-                    <h6>Modalidad de servicio de la empresa: </h6>
+                <p className="form__subtitle">Modalidad de servicio de la empresa: </p>
 
                     {/*Prestadora de Telecomunicaciones--------------------------------------------------------------------------- */}
                      <div className='col-12 mx-4 mb-2 d-flex align-items-center'>
@@ -29,7 +28,7 @@ export const CamposForm6 = ({ errors, touched }) => {
                         <label>Revendedores de servicios de Telecomunicaciones</label>
                     </div>
 
-                    <h6 className="mt-3">Reglamentaciones Vigentes: </h6>
+                    <p className="form__subtitle">Reglamentaciones Vigentes: </p>
                     < ReglamentosVigentes IdFormulario='006'   />
 
                 </div>

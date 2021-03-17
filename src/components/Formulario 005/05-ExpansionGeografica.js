@@ -1,6 +1,9 @@
 import React from 'react'
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
+import { Link } from 'react-router-dom';
+
+import { insertarDatosForm005} from '../../helpers/database';
 
 import { 
     DatosGenerales, 
@@ -26,9 +29,12 @@ const Validations = Yup.object().shape({
 export const ExpansionGeografica = () => {
     return (
         <>
-            <div className='divtainer p-5'>
+            <div className="form__header">
+                <Link to="./Home" className="form__ruta" >Formularios / </Link><small className="text-muted">FORMULARIO DE SOLICITUD DE EXPANSION GEOGRAFICA</small>
+                <p className="form__formName">FORMULARIO DE SOLICITUD DE EXPANSION GEOGRAFICA</p>
+            </div>
+            <div className='divtainer'>
         
-                <h5 className="text-center mb-3">FORMULARIO DE SOLICITUD DE EXPANSION GEOGRAFICA</h5>
                 <Formik
                     initialValues={{
                         IdFormulario:"005",
@@ -39,7 +45,8 @@ export const ExpansionGeografica = () => {
                     validationSchema={Validations}
                     onSubmit={(datos) => {
                         // same shape as initial values
-                        alert(JSON.stringify(datos, null, 2));
+                        // alert(JSON.stringify(datos, null, 2));
+                        insertarDatosForm005(datos)
                     }}
                     >
 

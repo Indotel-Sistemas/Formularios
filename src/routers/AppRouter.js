@@ -17,78 +17,83 @@ import { TransferenciaDerechoUso } from '../components/Formulario 006/06-Transfe
 import { AutorizacionPrestarServicioCertificacionConfianza } from '../components/Formulario 007/07-AutorizacionPrestarServicioCertificacionConfianza'
 import { SolucionControversias } from '../components/Formulario 008/08-SolucionControversias'
 import { DeclaracionJuradaSolicitudInscripcion } from '../components/Formulario 009/09-DeclaracionJuradaSolicitudInscripcion'
+import { Header } from '../components/ui/Header'
 
 export const AppRouter = () => {
     return (
-        
-        <Router>   {/* Contenedor de rutas  */}
-             
-            <Switch> {/* Selector de ruta segun path  */}
-
-                <Route 
-                    exact  //el path necesita ser exacto al establecido
-                    path="/Home"  //path establecido
-                    component={ Home }  //componente a renderizar
-                />
-
-                <Route 
-                    exact 
-                    path="/LicenciaTitularConcesion" 
-                    component={ LicenciaTitularConcesion } 
-                />
-
-                <Route 
-                    exact 
-                    path="/Concesion" 
-                    component={ Concesion } 
-                />
-
-                <Route 
-                    exact 
-                    path="/RenovacionConcesion" 
-                    component={ RenovacionConcesion } 
-                />
-
-                <Route 
-                    exact 
-                    path="/AsignacionOficinaCentral" 
-                    component={ AsignacionOficinaCentral } 
-                />
-
-                <Route 
-                    exact 
-                    path="/ExpansionGeografica" 
-                    component={ ExpansionGeografica } 
-                />
-
-                <Route 
-                    exact 
-                    path="/TransferenciaDerechoUso" 
-                    component={ TransferenciaDerechoUso } 
-                />
-
-                <Route 
-                    exact 
-                    path="/AutorizacionPrestarServicioCertificacionConfianza" 
-                    component={ AutorizacionPrestarServicioCertificacionConfianza } 
-                />
-
-                <Route 
-                    exact 
-                    path="/SolucionControversias" 
-                    component={ SolucionControversias } 
-                />
-
-                <Route 
-                    exact 
-                    path="/DeclaracionJuradaSolicitudInscripcion" 
-                    component={ DeclaracionJuradaSolicitudInscripcion } 
-                />
-
-                <Redirect to="/Home" /> {/* Ruta default */}
+        <>
+            
+            
+            <Router>   {/* Contenedor de rutas  */}
+            <Header />
                 
-            </Switch>
+                <Switch> {/* Selector de ruta segun path  */}
 
-        </Router>
+                    <Route 
+                        exact  //el path necesita ser exacto al establecido
+                        path="/Home"  //path establecido
+                        component={ Home }  //componente a renderizar
+                    />
+
+                    <Route 
+                        exact 
+                        path="/LicenciaTitularConcesion" 
+                        component={ LicenciaTitularConcesion } 
+                    />
+
+                    <Route 
+                        exact 
+                        path="/Concesion" 
+                        component={ Concesion } 
+                    />
+
+                    <Route 
+                        exact 
+                        path="/RenovacionConcesion" 
+                        component={ RenovacionConcesion } 
+                    />
+
+                    <Route 
+                        exact 
+                        path="/AsignacionOficinaCentral" 
+                        component={ AsignacionOficinaCentral } 
+                    />
+
+                    <Route 
+                        exact 
+                        path="/ExpansionGeografica" 
+                        component={ ExpansionGeografica } 
+                    />
+
+                    <Route 
+                        exact 
+                        path="/TransferenciaDerechoUso" 
+                        component={ TransferenciaDerechoUso } 
+                    />
+
+                    <Route 
+                        exact 
+                        path="/AutorizacionPrestarServicioCertificacionConfianza" 
+                        component={ AutorizacionPrestarServicioCertificacionConfianza } 
+                    />
+
+                    <Route 
+                        exact 
+                        path="/SolucionControversias" 
+                        component={ SolucionControversias } 
+                    />
+
+                    <Route 
+                        exact 
+                        path="/DeclaracionJuradaSolicitudInscripcion" 
+                        component={ DeclaracionJuradaSolicitudInscripcion } 
+                    />
+
+                    <Redirect to="/Home" /> {/* Ruta default */}
+                    
+                </Switch>
+
+            </Router>
+        </>
     )
 }

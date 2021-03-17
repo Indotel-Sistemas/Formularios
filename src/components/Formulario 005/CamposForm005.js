@@ -9,14 +9,14 @@ export const CamposForm005 = () => {
     return (
         <>
           
-            <h5 className=" navbar navbar-light bg-light px-3 mt-4">Formulario de Solicitud del Servicio</h5>
+            <p className="form__title">Formulario de Solicitud</p>
 
             <div className="px-3">
 
                 <div className="form-group">
-                    <h6>Modalidad del servicio de telecomunicaciones </h6>
+                    <p className="form__subtitle">Modalidad del servicio de telecomunicaciones </p>
 
-                    <h6 className="mt-3">Regulaciones aplicables: </h6>
+                    <p className="form__subtitle">Regulaciones aplicables: </p>
                     < ReglamentosVigentes IdFormulario='005'   />
 
                 </div>

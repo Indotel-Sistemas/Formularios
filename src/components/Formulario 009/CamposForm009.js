@@ -5,21 +5,19 @@ import * as Yup from 'yup';
 export const CamposForm009 = ({ errors, touched }) => {
     return (
         <>
-             <h5 className=" navbar navbar-light bg-light px-3 mt-2">Información General</h5>
-
+            <p className="form__title">Formulario de Solicitud</p>
             <div className="px-3 mb-4">
 
                 <div className="form-group row">
                 
                     {/*Tipo de Solicitud----------------------------------------------------------------- */}
                     <div className='col-6'>
-                        <label>Tipo de Solicitud</label>
                         <Field as="select" name="TipoSolicitud" className="form-control">
-                            <option value="" disabled>Elija tipo...</option>
-                            <option value="nuevaSolicitud">Nueva Solicitud</option>
-                            <option value="renovacion">Renovacion</option>
-                            <option value="cambioCategoria">Cambio de Categoría</option>
-                            <option value="portablesHI">Portables HI</option>
+                            <option value="" disabled>Tipo Solicitud...</option>
+                            <option value={5}>Nueva Solicitud</option>
+                            <option value={6}>Renovacion</option>
+                            <option value={7}>Cambio de Categoría</option>
+                            <option value={8}>Portables HI</option>
                         </Field>
                         {errors.TipoSolicitud && touched.TipoSolicitud ? (
                             <small className='text-danger'>{errors.TipoSolicitud}</small>
@@ -28,13 +26,12 @@ export const CamposForm009 = ({ errors, touched }) => {
 
                         {/*Categoría de Inscripción----------------------------------------------------------------- */}
                         <div className='col-6 mb-3'>
-                        <label>Categoría de Inscripción</label>
                         <Field as="select" name="CategoriaInscripcion" className="form-control">
-                            <option value="" disabled>Elija tipo...</option>
-                            <option value="superior">Superior</option>
-                            <option value="tecnica">Técnica</option>
-                            <option value="general">General</option>
-                            <option value="novicio">Novicio</option>
+                            <option value="" disabled>Categoría de Inscripción...</option>
+                            <option value={1}>Superior</option>
+                            <option value={2}>Técnica</option>
+                            <option value={3}>General</option>
+                            <option value={4}>Novicio</option>
                         </Field>
                         {errors.CategoriaInscripcion && touched.CategoriaInscripcion ? (
                             <small className='text-danger'>{errors.CategoriaInscripcion}</small>
@@ -44,8 +41,8 @@ export const CamposForm009 = ({ errors, touched }) => {
                         
                     {/*Servico a Operar--------------------------------------------------------------------------- */}
                     <div className='col-12 mb-3'>
-                        <label>Servico a Operar</label>
-                        <Field name='ServicioAoperar' as='textarea' className='form-control'  autoComplete="off"/>
+                        {/* <label>Servico a Operar</label> */}
+                        <Field name='ServicioAoperar' placeholder="Servico a Operar" as='textarea' className='form-control'  autoComplete="off"/>
                         {errors.ServicioAoperar && touched.ServicioAoperar ? (
                             <small className='text-danger'>{errors.ServicioAoperar}</small>
                             ) : null}
@@ -53,8 +50,8 @@ export const CamposForm009 = ({ errors, touched }) => {
                         
                     {/*Área Geográfica de Operación--------------------------------------------------------------------------- */}
                     <div className='col-12 mb-3'>
-                        <label>Área Geográfica de Operación</label>
-                        <Field name='Areageografica' as='textarea' className='form-control'  autoComplete="off"/>
+                        {/* <label>Área Geográfica de Operación</label> */}
+                        <Field name='Areageografica' placeholder="Área Geográfica de Operación" as='textarea' className='form-control'  autoComplete="off"/>
                         {errors.Areageografica && touched.Areageografica ? (
                             <small className='text-danger'>{errors.Areageografica}</small>
                             ) : null}
@@ -62,16 +59,16 @@ export const CamposForm009 = ({ errors, touched }) => {
 
                     {/*Letras Distintivas--------------------------------------------------------------------------- */}
                     <div className='col-12 mb-3'>
-                        <label>Letras Distintivas</label>
-                        <Field name='LetrasDistintivas' as='textarea' className='form-control'  autoComplete="off"/>
+                        {/* <label>Letras Distintivas</label> */}
+                        <Field name='LetrasDistintivas' placeholder="Letras Distintivas" as='textarea' className='form-control'  autoComplete="off"/>
                         {errors.LetrasDistintivas && touched.LetrasDistintivas ? (
                             <small className='text-danger'>{errors.LetrasDistintivas}</small>
                             ) : null}
                     </div>
                     {/*Descripción del Equipo de Radio a Utilizar--------------------------------------------------------------------------- */}
                     <div className='col-12'>
-                        <label>Descripción del Equipo de Radio a Utilizar</label>
-                        <Field name='DescripcionEquipoutilizar' as='textarea' className='form-control'  autoComplete="off"/>
+                        {/* <label>Descripción del Equipo de Radio a Utilizar</label> */}
+                        <Field name='DescripcionEquipoutilizar' placeholder="Descripción del Equipo de Radio a Utilizar" as='textarea' className='form-control'  autoComplete="off"/>
                         {errors.DescripcionEquipoutilizar && touched.DescripcionEquipoutilizar ? (
                             <small className='text-danger'>{errors.DescripcionEquipoutilizar}</small>
                             ) : null}

@@ -1,6 +1,9 @@
 import React from 'react'
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
+import { Link } from 'react-router-dom';
+
+import { insertarDatosForm008 } from '../../helpers/database';
 
 import { 
     DatosGenerales, 
@@ -16,19 +19,24 @@ import {
 
 import {
     CamposForm008,
-    CamposForm8InitialValues
+    CamposForm8InitialValues,
+    CamposForm8Validations
 } from './CamposForm008'
 
 const Validations = Yup.object().shape({
     ...datosGeneralesvalidations,
-    ...representanteLegalValidations
+    ...representanteLegalValidations,
+    ...CamposForm8Validations
    });
    
 export const SolucionControversias = () => {
     return (
         <>
-            <div className='divtainer p-5'>
-                <h5 className="text-center mb-3">FORMULARIO PARA INTERVENCION DEL INDOTEL PARA LA SOLUCION DE CONTROVERSIAS ENTRE PRESTADORAS DE SERVICIOS PUBLICOS DE TELECOMUNICACIONES</h5>
+            <div className="form__header">
+                <Link to="./Home" className="form__ruta" >Formularios / </Link><small className="text-muted">FORMULARIO PARA INTERVENCION DEL INDOTEL PARA LA SOLUCION DE CONTROVERSIAS ENTRE PRESTADORAS DE SERVICIOS PUBLICOS DE TELECOMUNICACIONES</small>
+                <p className="form__formName">FORMULARIO PARA INTERVENCION DEL INDOTEL PARA LA SOLUCION DE CONTROVERSIAS ENTRE PRESTADORAS DE SERVICIOS PUBLICOS DE TELECOMUNICACIONES</p>
+            </div>
+            <div className='divtainer'>
                 <Formik
                     initialValues={{
                         IdFormulario:"008",
@@ -39,7 +47,8 @@ export const SolucionControversias = () => {
                     validationSchema={Validations}
                     onSubmit={(datos) => {
                         // same shape as initial values
-                        alert(JSON.stringify(datos, null, 2));
+                        // alert(JSON.stringify(datos, null, 2));
+                        insertarDatosForm008(datos)
                     }}
                     >
 
@@ -53,7 +62,7 @@ export const SolucionControversias = () => {
                                 <RepresentanteLegal errors={ errors } touched={ touched }  />
                                 
                                 {/* Compos especificos del fomulario----------------------------------- */}
-                                <CamposForm008 />
+                                <CamposForm008 errors={ errors } touched={ touched } />
                                 
                                 <div className="px-3  mt-4">
                                     <button className='btn btn-primary  btn-block' type='submit'>
