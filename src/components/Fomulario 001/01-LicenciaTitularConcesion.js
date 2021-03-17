@@ -22,6 +22,7 @@ import {
     CamposForm001,
     CamposForm1InitialValues
 } from './CamposForm001'
+import { ButtonSubmitForm } from '../ui/ButtonSubmitForm';
 
 
 
@@ -34,9 +35,7 @@ export const LicenciaTitularConcesion = () => {
     return (
        <>   
             <div className="form__header">
-                <span className="form__rutaCompleta">
-                    <Link to="./Home" className="form__ruta" >Formularios / </Link><small className="text-muted">FORMULARIO DE SOLICITUD DE LICENCIA TITULAR DE UNA CONCESION</small>
-                </span>
+                <Link to="./Home" className="form__ruta" >Formularios / </Link><small className="text-muted">FORMULARIO DE SOLICITUD DE LICENCIA TITULAR DE UNA CONCESION</small>
                 <p className="form__formName">FORMULARIO DE SOLICITUD DE LICENCIA TITULAR DE UNA CONCESION</p>
             </div>
 
@@ -68,11 +67,8 @@ export const LicenciaTitularConcesion = () => {
                                 {/* Compos especificos del fomulario----------------------------------- */}
                                 <CamposForm001 />
                                 
-                                <div className="px-3  mt-4">
-                                    <button className='btn btn-primary  btn-block' type='submit'>
-                                    Ingresar
-                                    </button>
-                                </div>
+                                {/* Boton de enviar */}
+                                <ButtonSubmitForm />
                             </Form>
                         )}
 

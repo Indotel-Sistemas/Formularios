@@ -19,7 +19,7 @@ export const DatosGenerales = ({ errors, touched  }) => {
         <>
           
             <p className="form__title">Información General</p>
-            <div className="px-3 mb-4">
+            <div className="form__formtainer">
 
                 <div className="form-group row">
 

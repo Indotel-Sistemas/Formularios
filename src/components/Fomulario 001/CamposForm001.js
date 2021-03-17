@@ -16,13 +16,13 @@ export const CamposForm001 = () => {
                 <div className="form-group">
                      <p className="form__subtitle">Modalidad de servicio de la empresa:</p>
                     {/*Prestadora de Telecomunicaciones--------------------------------------------------------------------------- */}
-                    <div className='col-12 mx-4 mb-2 d-flex align-items-center'>
+                    <div className='col-11 mx-4 mb-2 d-flex align-items-center'>
                         <Field type="checkbox" name="PrestadoraTeleco" className="mx-2"/>
                         <label>Prestadora de Telecomunicaciones</label>
                     </div>
 
                     {/*Revendedores de servicios de Telecomunicaciones------------------------------------------------------------- */}
-                    <div className='col-12 mx-4 mb-2 d-flex align-items-center'>
+                    <div className='col-11 mx-4 mb-2 d-flex align-items-center'>
                         <Field type="checkbox" name="RevendedoresTeleco" className="mx-2"/>
                         <label>Revendedores de servicios de Telecomunicaciones</label>
                     </div>

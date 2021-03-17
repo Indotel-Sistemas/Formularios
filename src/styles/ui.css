@@ -13,4 +13,12 @@
 
 .ui__Link{
     text-decoration: none;
+    color: #000;
+}
+
+@media only screen and (max-width: 465px) {
+    .ui__headerLogo{
+        width: 100%;
+    }
+    
 }

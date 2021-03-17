@@ -16,12 +16,11 @@ import * as Yup from 'yup';
 
 export const RepresentanteLegal = ({ errors, touched  }) => {
     return (
-        <div>
-            <>
+
+        <>
           
-          {/* <h5 className=" navbar navbar-light bg-light px-3 mt-2">Representante Legal</h5> */}
           <p className="form__title">Representante Legal</p>
-          <div className="px-3 mb-4">
+          <div className="form__formtainer">
   
               <div className="form-group row">
   
@@ -172,8 +171,7 @@ export const RepresentanteLegal = ({ errors, touched  }) => {
               </div>
   
           </div>
-          </>
-        </div>
+        </>
     )
 }
 

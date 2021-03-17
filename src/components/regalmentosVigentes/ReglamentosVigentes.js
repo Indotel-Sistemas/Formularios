@@ -20,7 +20,7 @@ export const ReglamentosVigentes = ({ IdFormulario }) => {
         <> 
             {/*Ley de Telecomunicaciones (No. 153-98)--------------------------------------------------------------------------- */}
             {/* Se muestra en todos los formularios */}
-            <div className='col-12 mx-4  d-flex align-items-center justy-content-centermb-2'>
+            <div className='col-11 mx-4  d-flex align-items-center justy-content-centermb-2'>
                 <Field type="checkbox" name="LeyTeleco" className="mx-2"/>
                 <label>Ley de Telecomunicaciones (No. 153-98)</label>
             </div>
@@ -28,7 +28,7 @@ export const ReglamentosVigentes = ({ IdFormulario }) => {
             {/*Reglamento de Autorizaciones (No.036-19)------------------------------------------------------------------------- */}
             {
                 ['001','002','003', '005', '006'].includes(IdFormulario) && //establece en cuales formularios se muestra
-                <div className='col-12 mx-4 mb-2 d-flex align-items-center justy-content-center'>
+                <div className='col-11 mx-4 mb-2 d-flex align-items-center justy-content-center'>
                     <Field type="checkbox" name="ReglamentoAutorizaciones" className="mx-2"/>
                     <label>Reglamento de Autorizaciones (No.036-19)</label>
                 </div>
@@ -37,7 +37,7 @@ export const ReglamentosVigentes = ({ IdFormulario }) => {
             {/*Reglamento del Plan Nacional de Atribución de Frecuencias (No. 064-11)------------------------------------------------------------------------- */}
             {
                 ['001','006'].includes(IdFormulario) && //establece en cuales formularios se muestra
-                <div className='col-12 mx-4 mb-2 d-flex align-items-center justy-content-center'>
+                <div className='col-11 mx-4 mb-2 d-flex align-items-center justy-content-center'>
                     <Field type="checkbox" name="Reglamentofrecuencias" className="mx-2"/>
                     <label>Reglamento del Plan Nacional de Atribución de Frecuencias (No. 064-11)</label>
                 </div>
@@ -46,7 +46,7 @@ export const ReglamentosVigentes = ({ IdFormulario }) => {
             {/*Reglamento de Televisión por Suscripción (No. 160-05)------------------------------------------------------------------------- */}
             {
                 ['002','003','005'].includes(IdFormulario) && //establece en cuales formularios se muestra
-                <div className='col-12 mx-4 mb-2 d-flex align-items-center justy-content-center'>
+                <div className='col-11 mx-4 mb-2 d-flex align-items-center justy-content-center'>
                     <Field type="checkbox" name="ReglamentoTvSubscripcion" className="mx-2"/>
                     <label>Reglamento de Televisión por Suscripción (No. 160-05)</label>
                 </div>
@@ -55,7 +55,7 @@ export const ReglamentosVigentes = ({ IdFormulario }) => {
             {/*Reglamento de Numeración (PTFN No. 121-04)------------------------------------------------------------------------- */}
             {
                 ['004'].includes(IdFormulario) && //establece en cuales formularios se muestra
-                <div className='col-12 mx-4 mb-2 d-flex align-items-center justy-content-center'>
+                <div className='col-11 mx-4 mb-2 d-flex align-items-center justy-content-center'>
                     <Field type="checkbox" name="ReglamentoNumeracion" className="mx-2"/>
                     <label>Reglamento de Numeración (PTFN No. 121-04)</label>
                 </div>
@@ -64,7 +64,7 @@ export const ReglamentosVigentes = ({ IdFormulario }) => {
             {/*Reglamento de Libre y Leal Competencia (No. 022-05)*------------------------------------------------------------------------- */}
             {
                 ['008'].includes(IdFormulario) && //establece en cuales formularios se muestra
-                <div className='col-12 mx-4 mb-2 d-flex align-items-center justy-content-center'>
+                <div className='col-11 mx-4 mb-2 d-flex align-items-center justy-content-center'>
                     <Field type="checkbox" name="ReglamentoLeyLibreCOmpetencia" className="mx-2"/>
                     <label>Reglamento de Libre y Leal Competencia (No. 022-05)</label>
                 </div>
@@ -73,7 +73,7 @@ export const ReglamentosVigentes = ({ IdFormulario }) => {
             {/*Reglamento General de Interconexión (No. 038-11)------------------------------------------------------------------------- */}
             {
                 ['004','008'].includes(IdFormulario) && //establece en cuales formularios se muestra
-                <div className='col-12 mx-4 mb-2 d-flex align-items-center justy-content-center'>
+                <div className='col-11 mx-4 mb-2 d-flex align-items-center justy-content-center'>
                     <Field type="checkbox" name="ReglamentoGeneralInterconexion" className="mx-2"/>
                     <label>Reglamento General de Interconexión (No. 038-11)</label>
                 </div>
@@ -82,7 +82,7 @@ export const ReglamentosVigentes = ({ IdFormulario }) => {
             {/*Reglamento General del Uso del Espectro (No.128-04)------------------------------------------------------------------------- */}
             {
                 ['001','006'].includes(IdFormulario) && //establece en cuales formularios se muestra
-                <div className='col-12 mx-4 mb-2 d-flex align-items-center justy-content-center'>
+                <div className='col-11 mx-4 mb-2 d-flex align-items-center justy-content-center'>
                     <Field type="checkbox" name="ReglamentoGeneralEspectro" className="mx-2"/>
                     <label>Reglamento General del Uso del Espectro (No.128-04)</label>
                 </div>
@@ -91,7 +91,7 @@ export const ReglamentosVigentes = ({ IdFormulario }) => {
             {/*Reglamento para la Reventa de Servicios Públicos de Telecomunicaciones (No. 029-07)*------------------------------------------------------------------------- */}
             {
                 ['001','002','003','004','005','006','008'].includes(IdFormulario) && //establece en cuales formularios se muestra
-                <div className='col-12 mx-4 mb-2 d-flex align-items-center justy-content-center'>
+                <div className='col-11 mx-4 mb-2 d-flex align-items-center justy-content-center'>
                     <Field type="checkbox" name="ReglamentoReventaPublicos" className="mx-2"/>
                     <label>Reglamento para la Reventa de Servicios Públicos de Telecomunicaciones (No. 029-07)</label>
                 </div>
