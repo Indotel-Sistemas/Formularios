@@ -21,7 +21,6 @@ import {
     representanteLegalValidations,
     representanteLegalInitialValues 
 } from '../representanteLegal/RepresentanteLegal';
-import { ButtonSubmitForm } from '../ui/ButtonSubmitForm';
 
 
 const Validations = Yup.object().shape({
@@ -65,8 +64,6 @@ export const TransferenciaDerechoUso = () => {
                                 
                                 <CamposForm6 />
                                 
-                                {/* Boton de enviar */}
-                                <ButtonSubmitForm />
                             </Form>
                         )}
 

@@ -1,95 +1,96 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { ImFileText2 } from "react-icons/im";
 
 export const Home = () => {
     return (
         <>
         
             <div className="form__header">
-                <p className="form__formName">Formularios INDOTEL</p>
+                <p className="form__formName"> <ImFileText2 /> Formularios INDOTEL</p>
             </div>
     
             
             <div className='divtainer'>
 
-                <div>
+                <div className="my-2 mt-3">
                     <Link 
                         className="ui__Link"
                         to="/LicenciaTitularConcesion"
                     >
-                            1. LicenciaTitularConcesion
+                        <b>1.</b> Formulario de solicitud de licencia titular de una conseción.
                     </Link> 
                 </div>
 
-                <div>
+                <div className="my-2">
                     <Link 
                         className="ui__Link"
                         to="/Concesion" 
                     >
-                            2. Concesion
+                        <b>2.</b> Formulario de solicitud de conseción.
                     </Link>
                 </div>
                     
-                <div>
+                <div  className="my-2">
                     <Link 
                         className="ui__Link"
                         to="/RenovacionConcesion" 
                     >
-                            3. RenovacionConcesion
+                            <b>3.</b> Formalario de solicitud de renovación de conseciones.
                     </Link>
                 </div> 
 
-                <div>
+                <div className="my-2">
                     <Link 
                         className="ui__Link"
                         to="/AsignacionOficinaCentral" 
                     >
-                            4. AsignacionOficinaCentral
+                            <b>4.</b> Formalario de solicitud de asignación de oficina central o NXX.
                     </Link>
                 </div> 
                 
-                <div>
+                <div className="my-2">
                     <Link 
                         className="ui__Link"
                         to="/ExpansionGeografica" 
                     >
-                            5. ExpansionGeografica
+                            <b>5.</b> Formalario de solicitud de expansión geográfica.
                     </Link>
                 </div> 
                 
-                <div>
+                <div className="my-2">
                     <Link 
                         className="ui__Link"
                         to="/TransferenciaDerechoUso" 
                     >
-                            6. TransferenciaDerechoUso
+                            <b>6.</b> Formalario de solicitud de transferencia del derecho de uso.
                     </Link>
                 </div> 
 
-                <div>
+                <div className="my-2">
                     <Link 
                         className="ui__Link"
                         to="/AutorizacionPrestarServicioCertificacionConfianza" 
                     >
-                            7. AutorizacionPrestarServicioCertificacionConfianza
+                            <b>7.</b> Formalario de solicitud de autorización para prestar servicios.
                     </Link>
                 </div> 
 
-                <div>
+                <div className="my-2">
                     <Link 
                         className="ui__Link"
                         to="/SolucionControversias" 
                     >
-                            8. SolucionControversias
+                            <b>8.</b> Formalario para intervención  del INDOTEL para la solución  de controversias.
                     </Link>
                 </div> 
                 
-                <div>
+                <div className="mt-2">
                     <Link 
                         className="ui__Link"
                         to="/DeclaracionJuradaSolicitudInscripcion" 
                     >
-                            9. DeclaracionJuradaSolicitudInscripcion
+                            <b>9.</b> Formalario de declaración jurada para la solicitud de inscripción de servicios radioaficionados.
                     </Link>
                 </div> 
             </div>

@@ -21,7 +21,6 @@ import {
     CamposForm005,
     CamposForm5InitialValues
 } from './CamposForm005'
-import { ButtonSubmitForm } from '../ui/ButtonSubmitForm';
 
 const Validations = Yup.object().shape({
     ...datosGeneralesvalidations,
@@ -64,9 +63,7 @@ export const ExpansionGeografica = () => {
 
                                 {/* Compos especificos del fomulario----------------------------------- */}
                                 <CamposForm005 />
-                                
-                               {/* Boton de enviar */}
-                               <ButtonSubmitForm />
+                             
                             </Form>
                         )}
 

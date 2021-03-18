@@ -21,7 +21,6 @@ import {
     CamposForm007,
     CamposForm7InitialValues
 } from './CamposForm007'
-import { ButtonSubmitForm } from '../ui/ButtonSubmitForm';
 
 const Validations = Yup.object().shape({
     ...datosGeneralesvalidations,
@@ -63,9 +62,7 @@ export const AutorizacionPrestarServicioCertificacionConfianza = () => {
                                 
                                 {/* Compos especificos del fomulario----------------------------------- */}
                                 <CamposForm007 />
-                                
-                                {/* Boton de enviar */}
-                                <ButtonSubmitForm />
+                               
                             </Form>
                         )}
 

@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Field } from 'formik';
 import * as Yup from 'yup';
+import { IoIosArrowDropdown, IoIosArrowDropup } from 'react-icons/io';
+import { Collapse } from 'react-bootstrap';
 
 
 // EL componente RepresentanteLegal contiene todos los campos que son consistentes en todos los formularios,
@@ -15,11 +17,33 @@ import * as Yup from 'yup';
 //                        const Validations = Yup.object().shape({ ...representanteLegalValidations });
 
 export const RepresentanteLegal = ({ errors, touched  }) => {
+
+    const [open, setOpen] = useState(false); //Despliega y oculta la seccion de representante legal
+
     return (
 
         <>
           
-          <p className="form__title">Representante Legal</p>
+          <p className="form__title">
+            Representante Legal
+            
+            <button  
+                    className="btn btn-primary btn-sm" 
+                    type="button" 
+                    onClick={() => setOpen(!open)} 
+                    aria-controls="example-collapse-text" 
+                    aria-expanded={open}
+                    style={{backgroundColor:"#002954", border:"none"}}
+                >   
+                {
+                    open 
+                    ? <h4><IoIosArrowDropup /></h4>
+                    : <h4><IoIosArrowDropdown /></h4>
+                }
+                </button>
+              
+          </p>
+           <Collapse in={open}>
           <div className="form__formtainer">
   
               <div className="form-group row">
@@ -171,6 +195,7 @@ export const RepresentanteLegal = ({ errors, touched  }) => {
               </div>
   
           </div>
+          </Collapse>
         </>
     )
 }

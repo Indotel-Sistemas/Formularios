@@ -22,7 +22,6 @@ import {
     CamposForm003,
     CamposForm3InitialValues
 } from './CamposForm003'
-import { ButtonSubmitForm } from '../ui/ButtonSubmitForm';
 
 
 
@@ -66,8 +65,6 @@ export const RenovacionConcesion = () => {
                                 {/* Compos especificos del fomulario----------------------------------- */}
                                 <CamposForm003 />
                                 
-                                {/* Boton de enviar */}
-                                <ButtonSubmitForm />
                                 
                             </Form>
                         )}

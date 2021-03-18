@@ -22,7 +22,6 @@ import {
     CamposForm001,
     CamposForm1InitialValues
 } from './CamposForm001'
-import { ButtonSubmitForm } from '../ui/ButtonSubmitForm';
 
 
 
@@ -66,9 +65,7 @@ export const LicenciaTitularConcesion = () => {
                                 
                                 {/* Compos especificos del fomulario----------------------------------- */}
                                 <CamposForm001 />
-                                
-                                {/* Boton de enviar */}
-                                <ButtonSubmitForm />
+                            
                             </Form>
                         )}
 
