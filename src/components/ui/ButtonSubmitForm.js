@@ -6,7 +6,7 @@ export const ButtonSubmitForm = () => {
             <hr/>
             <div >
                 <button 
-                    class="btn btn-primary btn-block col-12" 
+                    className="btn btn-primary btn-block col-12" 
                     type='submit'
                     style={{backgroundColor:"#A21421", border:"none"}}
                 >

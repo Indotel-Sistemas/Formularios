@@ -11,7 +11,7 @@ export const Home = () => {
             </div>
     
             
-            <div className='divtainer'>
+            <div className='divtainer px-3'>
 
                 <div className="my-2 mt-3">
                     <Link 
