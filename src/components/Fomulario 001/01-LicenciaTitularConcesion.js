@@ -49,8 +49,8 @@ export const LicenciaTitularConcesion = () => {
                     validationSchema={Validations}
                     onSubmit={(datos) => {
                         // same shape as initial values
-                        // alert(JSON.stringify(datos, null, 2));
-                        insertarDatosForm001(datos);
+                        alert(JSON.stringify(datos, null, 2));
+                        // insertarDatosForm001(datos);
                     }}
                     >
 

@@ -36,7 +36,7 @@ export const Home = () => {
                         className="ui__Link"
                         to="/RenovacionConcesion" 
                     >
-                            <b>3.</b> Formalario de solicitud de renovación de conseciones.
+                            <b>3.</b> Formulario de solicitud de renovación de conseciones.
                     </Link>
                 </div> 
 
@@ -45,7 +45,7 @@ export const Home = () => {
                         className="ui__Link"
                         to="/AsignacionOficinaCentral" 
                     >
-                            <b>4.</b> Formalario de solicitud de asignación de oficina central o NXX.
+                            <b>4.</b> Formulario de solicitud de asignación de oficina central o NXX.
                     </Link>
                 </div> 
                 
@@ -54,7 +54,7 @@ export const Home = () => {
                         className="ui__Link"
                         to="/ExpansionGeografica" 
                     >
-                            <b>5.</b> Formalario de solicitud de expansión geográfica.
+                            <b>5.</b> Formulario de solicitud de expansión geográfica.
                     </Link>
                 </div> 
                 
@@ -63,7 +63,7 @@ export const Home = () => {
                         className="ui__Link"
                         to="/TransferenciaDerechoUso" 
                     >
-                            <b>6.</b> Formalario de solicitud de transferencia del derecho de uso.
+                            <b>6.</b> Formulario de solicitud de transferencia del derecho de uso.
                     </Link>
                 </div> 
 
@@ -72,7 +72,7 @@ export const Home = () => {
                         className="ui__Link"
                         to="/AutorizacionPrestarServicioCertificacionConfianza" 
                     >
-                            <b>7.</b> Formalario de solicitud de autorización para prestar servicios.
+                            <b>7.</b> Formulario de solicitud de autorización para prestar servicios.
                     </Link>
                 </div> 
 
@@ -81,7 +81,7 @@ export const Home = () => {
                         className="ui__Link"
                         to="/SolucionControversias" 
                     >
-                            <b>8.</b> Formalario para intervención  del INDOTEL para la solución  de controversias.
+                            <b>8.</b> Formulario para intervención  del INDOTEL para la solución  de controversias.
                     </Link>
                 </div> 
                 
@@ -90,7 +90,7 @@ export const Home = () => {
                         className="ui__Link"
                         to="/DeclaracionJuradaSolicitudInscripcion" 
                     >
-                            <b>9.</b> Formalario de declaración jurada para la solicitud de inscripción de servicios radioaficionados.
+                            <b>9.</b> Formulario de declaración jurada para la solicitud de inscripción de servicios radioaficionados.
                     </Link>
                 </div> 
             </div>
