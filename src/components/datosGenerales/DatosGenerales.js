@@ -15,10 +15,10 @@ import { IoIosArrowDropdown, IoIosArrowDropup } from "react-icons/io";
 //                        initialValues={{ ...datosGeneralesInitialValues }}
 //                        const Validations = Yup.object().shape({ ...datosGeneralesvalidations });
 
-export const DatosGenerales = ({ errors, touched  }) => {
-    
-    const [open, setOpen] = useState(true); //Despliega y oculta la seccion de datos generales
+export const DatosGenerales = ({ errors, touched}) => {
 
+    const [open, setOpen] = useState(true); //Despliega y oculta la seccion de datos generales
+    
     return (
         <>
           
@@ -28,7 +28,7 @@ export const DatosGenerales = ({ errors, touched  }) => {
                 <button  
                     className="btn btn-primary btn-sm" 
                     type="button" 
-                    onClick={() => setOpen(!open)} 
+                    onClick={() => {setOpen(!open)}} 
                     aria-controls="example-collapse-text" 
                     aria-expanded={open}
                     style={{backgroundColor:"#002954", border:"none"}}
