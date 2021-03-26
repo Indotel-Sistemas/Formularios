@@ -59,7 +59,7 @@ export const RepresentanteLegal = ({ errors, touched  }) => {
                 <p className="form__subtitle">Datos persona jurídica que representa a la empresa u organización solicitante</p>
                 
                 <div className="d-flex align-items-center my-1">
-                    <label htmlFor="tipoSolicitante">Tipo Solicitante:</label>
+                    <label htmlFor="tipoSolicitante">Tipo de representante:</label>
                     <div className="form-check mx-3">
                         <input className="form-check-input" type="radio" name="tipoSolicitante" value="Persona física" checked={tipoSolicitante ==="Persona física"}  onChange={ handleTipoSolicitante } />
                         <label className="form-check-label" htmlFor="flexRadioDefault1">
