@@ -22,6 +22,7 @@ import {
     CampoForm9Validations,
     CampoForm9InitialValues
 } from './CamposForm009'
+import { ButtonSubmitForm } from '../ui/ButtonSubmitForm';
 
 const Validations = Yup.object().shape({
     ...datosGeneralesvalidations,
@@ -64,7 +65,9 @@ export const DeclaracionJuradaSolicitudInscripcion = () => {
                                 
                                 {/* Compos especificos del fomulario----------------------------------- */}
                                 <CamposForm009 errors={ errors } touched={ touched } />
-                                
+                                                 
+                                {/* Boton de enviar */}
+                                <ButtonSubmitForm />
                             </Form>
                         )}
 

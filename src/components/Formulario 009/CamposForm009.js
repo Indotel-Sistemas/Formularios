@@ -4,7 +4,6 @@ import * as Yup from 'yup';
 import { Collapse } from 'react-bootstrap';
 import { IoIosArrowDropdown, IoIosArrowDropup } from 'react-icons/io';
 
-import { ButtonSubmitForm } from '../ui/ButtonSubmitForm';
 
 export const CamposForm009 = ({ errors, touched }) => {
 
@@ -99,9 +98,6 @@ export const CamposForm009 = ({ errors, touched }) => {
                                 <small className='text-danger'>{errors.DescripcionEquipoutilizar}</small>
                                 ) : null}
                         </div>
-                        
-                        {/* Boton de enviar */}
-                        <ButtonSubmitForm />
                         
                     </div>
                 

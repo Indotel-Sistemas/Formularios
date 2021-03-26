@@ -22,6 +22,7 @@ import {
     CamposForm003,
     CamposForm3InitialValues
 } from './CamposForm003'
+import { ButtonSubmitForm } from '../ui/ButtonSubmitForm';
 
 
 
@@ -64,8 +65,8 @@ export const RenovacionConcesion = () => {
                                 <RepresentanteLegal errors={ errors } touched={ touched }  />
                                 {/* Compos especificos del fomulario----------------------------------- */}
                                 <CamposForm003 />
-                                
-                                
+                                {/* Boton de enviar */}
+                                <ButtonSubmitForm />
                             </Form>
                         )}
 

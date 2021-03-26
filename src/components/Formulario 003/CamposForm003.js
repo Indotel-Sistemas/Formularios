@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { Collapse } from 'react-bootstrap';
 import { IoIosArrowDropdown, IoIosArrowDropup } from 'react-icons/io';
 
-import { ButtonSubmitForm } from '../ui/ButtonSubmitForm';
 import { 
     ReglamentosVigentes,
     ReglamentosVigentesInitialValues 
@@ -40,12 +39,9 @@ export const CamposForm003 = () => {
                     <p className="form__subtitle">Modalidad del servicio de telecomunicaciones </p>
 
                     <p className="form__subtitle">Regulaciones aplicables: </p>
-                        < ReglamentosVigentes IdFormulario='003'   />
+                    < ReglamentosVigentes IdFormulario='003'   />
+                </div>
 
-                    </div>
-                    
-                    {/* Boton de enviar */}
-                    <ButtonSubmitForm />
                 </div>
             </Collapse>
         </>

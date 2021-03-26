@@ -8,8 +8,6 @@ import {
     ReglamentosVigentesInitialValues 
 } from '../regalmentosVigentes/ReglamentosVigentes';
 
-import { ButtonSubmitForm } from '../ui/ButtonSubmitForm';
-
 
 export const CamposForm001 = () => {
 
@@ -57,12 +55,8 @@ export const CamposForm001 = () => {
                         <p className="form__subtitle">Reglamentaciones Vigentes:</p>
                         < ReglamentosVigentes IdFormulario='001'  />
 
-
-
                     </div>
                     
-                    {/* Boton de enviar */}
-                    <ButtonSubmitForm />
                 </div>
             </Collapse>
         </>

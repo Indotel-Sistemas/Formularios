@@ -56,7 +56,7 @@ export const DatosGenerales = ({ errors, touched}) => {
                         {/*CeduLa--------------------------------------------------------------------------- */}
                         <div className='col-6'>
                             {/* <label>Cedula</label> */}
-                            <Field name='Cedula' type='text' placeholder="Cedula" className='form-control'  autoComplete="off"/>
+                            <Field name='Cedula' type='text' placeholder="Cédula" className='form-control'  autoComplete="off"/>
                             {errors.Cedula && touched.Cedula ? (
                                 <small className='text-danger'>{errors.Cedula}</small>
                                 ) : null}

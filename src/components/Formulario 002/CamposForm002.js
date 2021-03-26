@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { Collapse } from 'react-bootstrap';
 import { IoIosArrowDropdown, IoIosArrowDropup } from "react-icons/io";
-import { ButtonSubmitForm } from '../ui/ButtonSubmitForm';
 
 import { 
     ReglamentosVigentes,
@@ -43,13 +42,8 @@ export const CamposForm002 = () => {
 
                         <p className="form__subtitle">Regulaciones aplicables: </p>
                         < ReglamentosVigentes IdFormulario='002'   />
-
-
-                    
                     </div>
                         
-                        {/* Boton de enviar */}
-                        <ButtonSubmitForm />
                 </div>
             </Collapse>
         </>

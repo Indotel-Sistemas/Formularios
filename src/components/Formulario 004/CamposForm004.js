@@ -4,7 +4,6 @@ import * as Yup from 'yup';
 import { Collapse } from 'react-bootstrap';
 import { IoIosArrowDropdown, IoIosArrowDropup } from 'react-icons/io';
 
-import { ButtonSubmitForm } from '../ui/ButtonSubmitForm';
 import { 
     ReglamentosVigentes,
     ReglamentosVigentesInitialValues 
@@ -69,10 +68,7 @@ export const CamposForm004 = ({ errors, touched }) => {
                         < ReglamentosVigentes IdFormulario='004'   />
 
                     </div>
-                    
-                                    
-                    {/* Boton de enviar */}
-                    <ButtonSubmitForm />
+
                 </div>
             </Collapse>
 

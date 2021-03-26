@@ -3,8 +3,6 @@ import { Field } from 'formik';
 import { Collapse } from 'react-bootstrap';
 import { IoIosArrowDropdown, IoIosArrowDropup } from 'react-icons/io';
 
-import { ButtonSubmitForm } from '../ui/ButtonSubmitForm';
-
 import { 
     ReglamentosVigentes, 
     ReglamentosVigentesInitialValues 
@@ -57,9 +55,6 @@ export const CamposForm6 = ({ errors, touched }) => {
                         <p className="form__subtitle">Reglamentaciones Vigentes: </p>
                         < ReglamentosVigentes IdFormulario='006'   />
                         
-                        {/* Boton de enviar */}
-                        <ButtonSubmitForm />
-
                     </div>
                 </div>
             </Collapse>

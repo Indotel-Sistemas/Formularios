@@ -2,9 +2,6 @@ import React, { useState } from 'react'
 import { Field } from 'formik';
 import { Collapse } from 'react-bootstrap';
 import { IoIosArrowDropdown, IoIosArrowDropup } from 'react-icons/io';
-
-import { ButtonSubmitForm } from '../ui/ButtonSubmitForm';
-
 export const CamposForm007 = () => {
 
     const [open, setOpen] = useState(false); //Despliega y oculta la seccion del formulario
@@ -107,10 +104,6 @@ export const CamposForm007 = () => {
                             <Field type="checkbox" name="ControlSujetosRegulados" className="mx-2"/>
                             <label>Solicitud de autorización para transferencia, cesión, arrendamiento, otorgamiento del derecho de uso, constitución de gravámenes o transferencia de control para sujetos regulados</label>
                         </div>
-                        
-                        {/* Boton de enviar */}
-                        <ButtonSubmitForm />
-
                     </div>
                 </div>
             </Collapse>

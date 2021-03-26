@@ -19,7 +19,10 @@ import { Collapse } from 'react-bootstrap';
 export const RepresentanteLegal = ({ errors, touched  }) => {
 
     const [open, setOpen] = useState(false); //Despliega y oculta la seccion de representante legal
-
+    const [tipoSolicitante, setTipoSolicitante] = useState(null);
+    const handleTipoSolicitante = (e) => {
+        setTipoSolicitante(e.target.value)
+    }
     return (
 
         <>
@@ -48,31 +51,54 @@ export const RepresentanteLegal = ({ errors, touched  }) => {
   
               <div className="form-group row">
   
-                  {/*ID FORMULARIO--------------------------------------------------------------------------- */}
-                  <div className='col-6'>
-                      <Field hidden name='IdFormulario' type='text' className='form-control'  autoComplete="off"/>
-                  </div>
+                {/*ID FORMULARIO--------------------------------------------------------------------------- */}
+                <div className='col-6'>
+                    <Field hidden name='IdFormulario' type='text' className='form-control'  autoComplete="off"/>
+                </div>
+
+                <p className="form__subtitle">Datos persona jurídica que representa a la empresa u organización solicitante</p>
+                
+                <div className="d-flex align-items-center my-1">
+                    <label htmlFor="tipoSolicitante">Tipo Solicitante:</label>
+                    <div className="form-check mx-3">
+                        <input className="form-check-input" type="radio" name="tipoSolicitante" value="Persona física" checked={tipoSolicitante ==="Persona física"}  onChange={ handleTipoSolicitante } />
+                        <label className="form-check-label" htmlFor="flexRadioDefault1">
+                            Persona física
+                        </label>
+                    </div>
+                    <div className="form-check ml-4">
+                        <input className="form-check-input" type="radio" name="tipoSolicitante" value="Entidad Jurídica" checked={tipoSolicitante ==="Entidad Jurídica"}  onChange={ handleTipoSolicitante }  />
+                        <label className="form-check-label" htmlFor="flexRadioDefault2">
+                            Entidad jurídica
+                        </label>
+                    </div>
+                </div>
+
+                {/*CeduLa--------------------------------------------------------------------------- */}
+                {
+                    tipoSolicitante === 'Persona física' &&
+                    <div className='col-6'>
+                        {/* <label>Cedula</label> */}
+                        <Field name='CedulaRepresentante' placeholder="Cédula" type='text' className='form-control'  autoComplete="off"/>
+                        {errors.CedulaRepresentante && touched.CedulaRepresentante ? (
+                            <small className='text-danger'>{errors.CedulaRepresentante}</small>
+                            ) : null}
+                    </div>
+                }
   
-                  <p className="form__subtitle">Datos persona jurídica que representa a la empresa u organización solicitante</p>
-                  {/*CeduLa--------------------------------------------------------------------------- */}
-                  <div className='col-6'>
-                      {/* <label>Cedula</label> */}
-                      <Field name='CedulaRepresentante' placeholder="Cedula" type='text' className='form-control'  autoComplete="off"/>
-                      {errors.CedulaRepresentante && touched.CedulaRepresentante ? (
-                          <small className='text-danger'>{errors.CedulaRepresentante}</small>
-                          ) : null}
-                  </div>
-  
-                  {/*RNC----------------------------------------------------------------- */}
-                  <div className='col-6'>
-                      {/* <label>RNC</label> */}
-                      <Field name='RNCRepresentante' placeholder="RNC" type='text' className='form-control'  autoComplete="off"/>
-                      {errors.RNCRepresentante && touched.RCNRepresentante ? (
-                          <small className='text-danger'>{errors.RNCRepresentante}</small>
-                          ) : null}
-                  </div>
+                {/*RNC----------------------------------------------------------------- */}
+                {   
+                    tipoSolicitante === 'Entidad Jurídica' &&
+                    <div className='col-6'>
+                        {/* <label>RNC</label> */}
+                        <Field name='RNCRepresentante' placeholder="RNC" type='text' className='form-control'  autoComplete="off"/>
+                        {errors.RNCRepresentante && touched.RCNRepresentante ? (
+                            <small className='text-danger'>{errors.RNCRepresentante}</small>
+                            ) : null}
+                    </div>
+                }
               </div>
-  
+             
               <div className="row mt-3">
                   {/*NOMBRE--------------------------------------------------------------------------- */}
                   <div className='col-6'>
@@ -86,7 +112,7 @@ export const RepresentanteLegal = ({ errors, touched  }) => {
                   {/*APELLIDO--------------------------------------------------------------------------- */}
                   <div className='col-6'>
                       {/* <label>Apellido</label> */}
-                      <Field name='ApellidoRepresentante' placeholder="Apellido" type='text' className='form-control'  autoComplete="off"/>
+                      <Field name='ApellidoRepresentante' placeholder={ tipoSolicitante==='Entidad jurídica' ? 'Razón social' : 'Apellido'  } type='text' className='form-control'  autoComplete="off"/>
                       {errors.ApellidoRepresentante && touched.ApellidoRepresentante ? (
                           <small className='text-danger'>{errors.ApellidoRepresentante}</small>
                       ) : null}
@@ -206,7 +232,7 @@ export const representanteLegalValidations = {
     .max(11, 'Debe contener 11 caracteres.')
     .required('Cedula requerida'),
     NombreRepresentante: Yup.string().required('Nombre requerido'),
-    ApellidoRepresentante: Yup.string().required('Apellido requerido'),
+    ApellidoRepresentante: Yup.string().required('Campo requerido'),
     RNCRepresentante: Yup.string()
     .min(9, 'Debe contener 11 caracteres.')
     .max(9, 'Debe contener 11 caracteres.')
