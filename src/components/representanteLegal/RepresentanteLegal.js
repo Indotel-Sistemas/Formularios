@@ -21,7 +21,7 @@ export const RepresentanteLegal = ({ errors, touched  }) => {
     const [open, setOpen] = useState(false); //Despliega y oculta la seccion de representante legal
     const [tipoSolicitante, setTipoSolicitante] = useState(null);
     const handleTipoSolicitante = (e) => {
-        setTipoSolicitante(e.target.value)
+        setTipoSolicitante(e.target.value);
     }
     return (
 
@@ -112,7 +112,7 @@ export const RepresentanteLegal = ({ errors, touched  }) => {
                   {/*APELLIDO--------------------------------------------------------------------------- */}
                   <div className='col-6'>
                       {/* <label>Apellido</label> */}
-                      <Field name='ApellidoRepresentante' placeholder={ tipoSolicitante==='Entidad jurídica' ? 'Razón social' : 'Apellido'  } type='text' className='form-control'  autoComplete="off"/>
+                      <Field name='ApellidoRepresentante' placeholder={ tipoSolicitante ==='Entidad Jurídica' ? 'Razón social' : 'Apellido'  } type='text' className='form-control'  autoComplete="off"/>
                       {errors.ApellidoRepresentante && touched.ApellidoRepresentante ? (
                           <small className='text-danger'>{errors.ApellidoRepresentante}</small>
                       ) : null}
@@ -229,14 +229,12 @@ export const RepresentanteLegal = ({ errors, touched  }) => {
 export const representanteLegalValidations = {
     CedulaRepresentante: Yup.string()
     .min(11, 'Debe contener 11 caracteres.')
-    .max(11, 'Debe contener 11 caracteres.')
-    .required('Cedula requerida'),
+    .max(11, 'Debe contener 11 caracteres.'),
     NombreRepresentante: Yup.string().required('Nombre requerido'),
     ApellidoRepresentante: Yup.string().required('Campo requerido'),
     RNCRepresentante: Yup.string()
     .min(9, 'Debe contener 11 caracteres.')
-    .max(9, 'Debe contener 11 caracteres.')
-    .required('Tipo requerido'),
+    .max(9, 'Debe contener 11 caracteres.'),
     ProvinciaRepresentante: Yup.string().required('Campo requerido'),
     MunicipioRepresentante: Yup.string().required('Campo requerido'),
     SectorRepresentante: Yup.string().required('Campo requerido'),
@@ -272,9 +270,9 @@ export const representanteLegalInitialValues = {
 }
 
 // export const representanteLegalInitialValues = {
-//     CedulaRepresentante: '40222954869',
-//     NombreRepresentante: 'Juan',
-//     ApellidoRepresentante: 'Mota',
+//     CedulaRepresentante: '',
+//     NombreRepresentante: '',
+//     ApellidoRepresentante: '',
 //     RNCRepresentante:'',
 //     ProvinciaRepresentante: 'La Romana',
 //     MunicipioRepresentante: 'Villa Hermosa',
