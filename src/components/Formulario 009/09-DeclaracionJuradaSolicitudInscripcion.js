@@ -3,7 +3,7 @@ import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 import { Link } from 'react-router-dom';
 
-import { insertarDatosForm009 } from '../../helpers/database';
+import { insertarDatosForm009 } from '../../helpers/POSTform';
 
 import { 
     DatosGenerales, 

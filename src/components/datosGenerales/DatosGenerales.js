@@ -15,7 +15,7 @@ import { IoIosArrowDropdown, IoIosArrowDropup } from "react-icons/io";
 //                        initialValues={{ ...datosGeneralesInitialValues }}
 //                        const Validations = Yup.object().shape({ ...datosGeneralesvalidations });
 
-export const DatosGenerales = ({ errors, touched}) => {
+export const DatosGenerales = ({ errors, touched, Nombre, Apellido}) => {
 
     const [open, setOpen] = useState(true); //Despliega y oculta la seccion de datos generales
     
@@ -56,7 +56,14 @@ export const DatosGenerales = ({ errors, touched}) => {
                         {/*CeduLa--------------------------------------------------------------------------- */}
                         <div className='col-6'>
                             {/* <label>Cedula</label> */}
-                            <Field name='Cedula' type='text' placeholder="Cédula" className='form-control'  autoComplete="off"/>
+                            <Field 
+                                name='Cedula' 
+                                type='text' 
+                                placeholder="Cédula" 
+                                className='form-control'  
+                                autoComplete="off"
+                                // onChange={(e)=>{console.log(e.currentTarget.value)}}
+                            />
                             {errors.Cedula && touched.Cedula ? (
                                 <small className='text-danger'>{errors.Cedula}</small>
                                 ) : null}
@@ -81,7 +88,7 @@ export const DatosGenerales = ({ errors, touched}) => {
                         {/*NOMBRE--------------------------------------------------------------------------- */}
                         <div className='col-6'>
                             {/* <label>Nombre</label> */}
-                            <Field name='Nombre' type='text' placeholder="Nombre" className='form-control' autoComplete="off"/>
+                            <Field name='Nombre' readOnly type='text' value={Nombre} placeholder="Nombre" className='form-control' autoComplete="off"/>
                             {errors.Nombre && touched.Nombre ? (
                                 <small className='text-danger'>{errors.Nombre}</small>
                                 ) : null}
@@ -90,7 +97,7 @@ export const DatosGenerales = ({ errors, touched}) => {
                         {/*APELLIDO--------------------------------------------------------------------------- */}
                         <div className='col-6'>
                             {/* <label>Apellido</label> */}
-                            <Field name='Apellido' type='text' placeholder="Apellido" className='form-control'  autoComplete="off"/>
+                            <Field name='Apellido' readOnly type='text' value={ Apellido } placeholder="Apellido" className='form-control'  autoComplete="off"/>
                             {errors.Apellido && touched.Apellido ? (
                                 <small className='text-danger'>{errors.Apellido}</small>
                             ) : null}
@@ -210,8 +217,8 @@ export const datosGeneralesvalidations = {
     .min(11, 'Debe contener 11 caracteres.')
     .max(11, 'Debe contener 11 caracteres.')
     .required('Cedula requerida'),
-    Nombre: Yup.string().required('Nombre requerido'),
-    Apellido: Yup.string().required('Apellido requerido'),
+    Nombre: Yup.string(),
+    Apellido: Yup.string(),
     TipoSolicitante: Yup.string().required('Tipo requerido'),
     Provincia: Yup.string().required('Campo requerido'),
     Municipio: Yup.string().required('Campo requerido'),
