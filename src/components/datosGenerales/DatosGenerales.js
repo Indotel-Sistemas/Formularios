@@ -20,7 +20,7 @@ export const DatosGenerales = ({ errors, touched, Nombre, Apellido}) => {
 
     const [open, setOpen] = useState(true); //Despliega y oculta la seccion de datos generales
     const { localidades } = useContext(LocalidadContext);
-    
+
     return (
         <>
           
@@ -60,7 +60,7 @@ export const DatosGenerales = ({ errors, touched, Nombre, Apellido}) => {
                             {/* <label>Cedula</label> */}
                             <Field 
                                 name='Cedula' 
-                                type='text' 
+                                type='number' 
                                 placeholder="Cédula" 
                                 className='form-control'  
                                 autoComplete="off"
@@ -246,7 +246,7 @@ export const datosGeneralesvalidations = {
     // TipoSolicitante: Yup.string().required('Tipo requerido'),
     // Provincia: Yup.string().required('Campo requerido'),
     // Municipio: Yup.string().required('Campo requerido'),
-    // Sector: Yup.string().required('Campo requerido'),
+    // Sector: Yup.string(),
     // Calle: Yup.string().required('Campo requerido'),
     // Numero: Yup.number().required('Campo requerido'),
     // Apartamento: Yup.number(),

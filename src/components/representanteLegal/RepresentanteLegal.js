@@ -1,8 +1,9 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Field } from 'formik';
 import * as Yup from 'yup';
 import { IoIosArrowDropdown, IoIosArrowDropup } from 'react-icons/io';
 import { Collapse } from 'react-bootstrap';
+import { LocalidadContext } from '../../context/LocalidadContext';
 
 
 // EL componente RepresentanteLegal contiene todos los campos que son consistentes en todos los formularios,
@@ -25,6 +26,7 @@ export const RepresentanteLegal = (
         setNombreRepresentante('');
         setApellidoRepresentante('');
     }
+    const { localidades } = useContext(LocalidadContext);
     return (
 
         <>
@@ -100,7 +102,7 @@ export const RepresentanteLegal = (
                         required={tipoSolicitante === 'Persona física'} 
                         disabled={tipoSolicitante === 'Entidad Jurídica'} 
                         placeholder="Cédula" 
-                        type='text' 
+                        type='number' 
                         className='form-control'  
                         autoComplete="off"
                         />
@@ -133,7 +135,7 @@ export const RepresentanteLegal = (
              
               <div className="row mt-3">
                   {/*NOMBRE--------------------------------------------------------------------------- */}
-                  <div className='col-6'>
+                  <div className={tipoSolicitante === 'Entidad Jurídica' ? 'col-12' : 'col-6'}>
                       {/* <label>Nombre</label> */}
                       <Field 
                         name='NombreRepresentante' 
@@ -149,70 +151,74 @@ export const RepresentanteLegal = (
                   </div>
   
                   {/*APELLIDO--------------------------------------------------------------------------- */}
-                  <div className='col-6'>
-                      {/* <label>Apellido</label> */}
-                      <Field 
-                        name='ApellidoRepresentante' 
-                        readOnly value={ApellidoRepresentante} 
-                        placeholder={ tipoSolicitante ==='Entidad Jurídica' ? 'Razón social' : 'Apellido'  } 
-                        type='text' 
-                        className='form-control'  
-                        autoComplete="off"
-                      />
-                      {errors.ApellidoRepresentante && touched.ApellidoRepresentante ? (
-                          <small className='text-danger'>{errors.ApellidoRepresentante}</small>
-                      ) : null}
-                  </div>
-                  
+                  {
+                    tipoSolicitante === 'Persona física' && //Solo se muestra si el tipo es Persona física
+                    <div className='col-6'>
+                        {/* <label>Apellido</label> */}
+                        <Field 
+                            name='ApellidoRepresentante' 
+                            readOnly value={ApellidoRepresentante} 
+                            placeholder={ tipoSolicitante ==='Entidad Jurídica' ? 'Razón social' : 'Apellido'  } 
+                            type='text' 
+                            className='form-control'  
+                            autoComplete="off"
+                        />
+                        {errors.ApellidoRepresentante && touched.ApellidoRepresentante ? (
+                            <small className='text-danger'>{errors.ApellidoRepresentante}</small>
+                        ) : null}
+                    </div>
+                    
+                  }
               </div>
                           
               <div className="form-group row mt-4">
                   <p className="form__subtitle">Dirección</p>
-                  {/*PROVINCIA--------------------------------------------------------------------------- */}
-                  <div className='col-4'>
-                      {/* <label>Provincia</label> */}
-                      <Field 
-                        name='ProvinciaRepresentante' 
-                        placeholder="Provincia" 
-                        type='text' 
-                        className='form-control'  
-                        autoComplete="off"
-                      />
-                      {errors.ProvinciaRepresentante && touched.ProvinciaRepresentante ? (
-                          <small className='text-danger'>{errors.ProvinciaRepresentante}</small>
-                          ) : null}
-                  </div>
-  
+               
+                    {/*PROVINCIA--------------------------------------------------------------------------- */}
+                    <div className='col-4'>
+                        <Field as="select"  name="ProvinciaRepresentante" className="form-control" autoComplete="off">
+                            <option value="" disabled>Provincia...</option>
+                            {
+                                    localidades.ProvinciasRepresentante.map((provincia)=>(
+                                    <option key={provincia.Id} value={provincia.Id}>{provincia.Nombre}</option>
+                                ))
+                            }
+                        </Field>
+                        {errors.ProvinciaRepresentante && touched.ProvinciaRepresentante ? (
+                            <small className='text-danger'>{errors.ProvinciaRepresentante}</small>
+                            ) : null}
+                    </div>
+    
                   {/*MUNICIPIO--------------------------------------------------------------------------- */}
-                  <div className='col-4'>
-                      {/* <label>Municipio</label> */}
-                      <Field 
-                        name='MunicipioRepresentante' 
-                        placeholder="Municipio" 
-                        type='text' 
-                        className='form-control' 
-                        autoComplete="off"
-                      />
-                      {errors.MunicipioRepresentante && touched.MunicipioRepresentante ? (
+                    <div className='col-4'>
+                        <Field as="select"  name="MunicipioRepresentante" className="form-control" autoComplete="off">
+                            <option value="" disabled>Municipio...</option>
+                            {
+                                localidades.MunicipiosRepresentante.map(municipio => (
+                                    <option key={municipio.Id} value={municipio.Id}>{municipio.Descripcion}</option>
+                                ))
+                            }
+                        </Field>
+                        {errors.MunicipioRepresentante && touched.MunicipioRepresentante ? (
                           <small className='text-danger'>{errors.MunicipioRepresentante}</small>
                           ) : null}
-                  </div>
-  
+                    </div>
+
                   {/*SECTOR--------------------------------------------------------------------------- */}
-                  <div className='col-4'>
-                      {/* <label>Sector</label> */}
-                      <Field 
-                        name='SectorRepresentante' 
-                        placeholder="Sector" 
-                        type='text' 
-                        className='form-control'  
-                        autoComplete="off"
-                      />
-                      {errors.SectorRepresentante && touched.SectorRepresentante ? (
-                          <small className='text-danger'>{errors.SectorRepresentante}</small>
-                      ) : null}
-                  </div>
-              </div>
+                    <div className='col-4'>
+                            <Field as="select"  name="SectorRepresentante" className="form-control" autoComplete="off">
+                                <option value="" disabled>Sector...</option>
+                                {
+                                        localidades.SectoresRepresentante.map((sector)=>(
+                                        <option key={sector.Id} value={sector.Id}>{sector.Descripcion}</option>
+                                    ))
+                                }
+                            </Field>
+                            {errors.SectorRepresentante && touched.SectorRepresentante ? (
+                                <small className='text-danger'>{errors.SectorRepresentante}</small>
+                            ) : null}
+                    </div>
+                </div>
   
               <div className="mt-4">
                   {/*Calle--------------------------------------------------------------------------- */}
@@ -301,7 +307,7 @@ export const representanteLegalValidations = {
     // .max(9, 'Debe contener 11 caracteres.'),
     // ProvinciaRepresentante: Yup.string().required('Campo requerido'),
     // MunicipioRepresentante: Yup.string().required('Campo requerido'),
-    // SectorRepresentante: Yup.string().required('Campo requerido'),
+    // SectorRepresentante: Yup.string(),
     // CalleRepresentante: Yup.string().required('Campo requerido'),
     // NumeroRepresentante: Yup.number().required('Campo requerido'),
     // ApartamentoRepresentante: Yup.number(),

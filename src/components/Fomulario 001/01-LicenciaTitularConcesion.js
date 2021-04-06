@@ -37,6 +37,7 @@ export const LicenciaTitularConcesion = () => {
 
     //Representante Legal
     const [NombreRepresentante, setNombreRepresentante] = useState('');
+    const [RNCRepresentante, setRNCRepresentante] = useState('');
     const [ApellidoRepresentante, setApellidoRepresentante] = useState('');
 
     return (
@@ -65,7 +66,7 @@ export const LicenciaTitularConcesion = () => {
                             ApellidoRepresentante
                         }
                         console.log(JSON.stringify(data, null, 2));
-                        // insertarDatosForm001(data);
+                        insertarDatosForm001(data);
                     }}
                     >
 
@@ -82,8 +83,10 @@ export const LicenciaTitularConcesion = () => {
                                 setApellido={ setApellido } 
                                 NombreRepresentante={ NombreRepresentante } 
                                 ApellidoRepresentante={ ApellidoRepresentante }
+                                RNCRepresentante={ RNCRepresentante }
                                 setNombreRepresentante={ setNombreRepresentante } 
                                 setApellidoRepresentante={ setApellidoRepresentante } 
+                                setRNCRepresentante={ setRNCRepresentante }
                                 CamposEspecificos={ CamposForm001 }
                             />
                         )}

@@ -17,7 +17,7 @@ export const FormApp = () => {
     useEffect( () => {
         async function getData() {
             const provincias = await getProvincias();
-            setLocalidades(localidades =>({...localidades, Provincias: provincias}))
+            setLocalidades(localidades =>({...localidades, Provincias: provincias, ProvinciasRepresentante: provincias}))
         }
         getData();
     }, [setLocalidades])
