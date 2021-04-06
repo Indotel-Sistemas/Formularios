@@ -1,19 +1,17 @@
-import React from 'react'
-import { Formik, Form } from 'formik';
+import React, { useState } from 'react'
+import { Formik } from 'formik';
 import * as Yup from 'yup';
 import { Link } from 'react-router-dom';
 
 import { insertarDatosForm002 } from '../../helpers/POSTform';
 
 import { 
-    DatosGenerales, 
     datosGeneralesvalidations, 
     datosGeneralesInitialValues 
 } from "../datosGenerales/DatosGenerales";
 
 
 import { 
-    RepresentanteLegal,
     representanteLegalValidations,
     representanteLegalInitialValues 
 } from '../representanteLegal/RepresentanteLegal';
@@ -22,7 +20,8 @@ import {
     CamposForm002,
     CamposForm2InitialValues
 } from './CamposForm002'
-import { ButtonSubmitForm } from '../ui/ButtonSubmitForm';
+// import { ButtonSubmitForm } from '../ui/ButtonSubmitForm';
+import { FormComponent } from '../estructuraFormFormik/FormComponent';
 
 
 const Validations = Yup.object().shape({
@@ -31,6 +30,16 @@ const Validations = Yup.object().shape({
    });
 
 export const Concesion = () => {
+      //Variables para popular campos aon Api cedula y RNC
+    //Datos generales
+    const [Nombre, setNombre] = useState('');
+    const [Apellido, setApellido] = useState('');
+
+    //Representante Legal
+    const [NombreRepresentante, setNombreRepresentante] = useState('');
+    const [RNCRepresentante, setRNCRepresentante] = useState('');
+    const [ApellidoRepresentante, setApellidoRepresentante] = useState('');
+
     return (
          <>
     
@@ -49,26 +58,35 @@ export const Concesion = () => {
                     }}
                     validationSchema={Validations}
                     onSubmit={(datos) => {
+                        const data = {
+                            ...datos,
+                            Nombre, //
+                            Apellido,
+                            NombreRepresentante,
+                            ApellidoRepresentante
+                        }
                         // same shape as initial values
-                        insertarDatosForm002(datos);
+                        console.log(JSON.stringify(data, null, 2));
+                        // insertarDatosForm002(data);
                     }}
                     >
 
                         {({ errors, touched }) => (
-                            <Form >   
-
-                                {/* Campos de datos generales----------------------------------------- */}
-                                <DatosGenerales errors={ errors } touched={ touched }  />
-
-                                {/* Campos de datos representante legal----------------------------------------- */}
-                                <RepresentanteLegal errors={ errors } touched={ touched }  />
-                               
-                                {/* Compos especificos del fomulario----------------------------------- */}
-                                <CamposForm002 />
-
-                                {/* Boton de enviar */}
-                                <ButtonSubmitForm />
-                            </Form>
+                            <FormComponent
+                                errors={ errors } 
+                                touched={ touched } 
+                                Nombre={ Nombre } 
+                                Apellido={ Apellido } 
+                                setNombre={ setNombre } 
+                                setApellido={ setApellido } 
+                                NombreRepresentante={ NombreRepresentante } 
+                                ApellidoRepresentante={ ApellidoRepresentante }
+                                RNCRepresentante={ RNCRepresentante }
+                                setNombreRepresentante={ setNombreRepresentante } 
+                                setApellidoRepresentante={ setApellidoRepresentante } 
+                                setRNCRepresentante={ setRNCRepresentante }
+                                CamposEspecificos={ CamposForm002 }
+                            />
                         )}
 
                 </Formik> 

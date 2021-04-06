@@ -20,7 +20,7 @@ import { LocalidadContext } from '../../context/LocalidadContext';
 export const RepresentanteLegal = (
     { errors, touched, NombreRepresentante, ApellidoRepresentante, setNombreRepresentante,setApellidoRepresentante }) => {
     const [open, setOpen] = useState(false); //Despliega y oculta la seccion de representante legal
-    const [tipoSolicitante, setTipoSolicitante] = useState(null);
+    const [tipoSolicitante, setTipoSolicitante] = useState('Persona física');
     const handleTipoSolicitante = (e) => {
         setTipoSolicitante(e.target.value);
         setNombreRepresentante('');

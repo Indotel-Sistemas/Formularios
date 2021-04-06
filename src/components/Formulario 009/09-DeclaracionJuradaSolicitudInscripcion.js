@@ -1,18 +1,16 @@
-import React from 'react'
-import { Formik, Form } from 'formik';
+import React, { useState } from 'react'
+import { Formik } from 'formik';
 import * as Yup from 'yup';
 import { Link } from 'react-router-dom';
 
 import { insertarDatosForm009 } from '../../helpers/POSTform';
 
 import { 
-    DatosGenerales, 
     datosGeneralesvalidations, 
     datosGeneralesInitialValues 
 } from "../datosGenerales/DatosGenerales";
 
 import { 
-    RepresentanteLegal,
     representanteLegalValidations,
     representanteLegalInitialValues 
 } from '../representanteLegal/RepresentanteLegal';
@@ -22,7 +20,7 @@ import {
     CampoForm9Validations,
     CampoForm9InitialValues
 } from './CamposForm009'
-import { ButtonSubmitForm } from '../ui/ButtonSubmitForm';
+import { FormComponent } from '../estructuraFormFormik/FormComponent';
 
 const Validations = Yup.object().shape({
     ...datosGeneralesvalidations,
@@ -31,6 +29,18 @@ const Validations = Yup.object().shape({
    });
 
 export const DeclaracionJuradaSolicitudInscripcion = () => {
+    
+     //Variables para popular campos aon Api cedula y RNC
+    //Datos generales
+    const [Nombre, setNombre] = useState('');
+    const [Apellido, setApellido] = useState('');
+
+    //Representante Legal
+    const [NombreRepresentante, setNombreRepresentante] = useState('');
+    const [RNCRepresentante, setRNCRepresentante] = useState('');
+    const [ApellidoRepresentante, setApellidoRepresentante] = useState('');
+
+
     return (
         <>
             <div className="form__header">
@@ -49,26 +59,37 @@ export const DeclaracionJuradaSolicitudInscripcion = () => {
                     validationSchema={Validations}
                     onSubmit={(datos) => {
                         // same shape as initial values
-                        // alert(JSON.stringify(datos, null, 2));
-                        insertarDatosForm009(datos)
+                        const data = {
+                            ...datos,
+                            Nombre, //
+                            Apellido,
+                            NombreRepresentante,
+                            ApellidoRepresentante
+                        }
+                        console.log(JSON.stringify(data, null, 2));
+                        // insertarDatosForm009(data);
                     }}
                     >
 
                         {({ errors, touched }) => (
-                            <Form >   
-
-                                {/* Campos de datos generales----------------------------------------- */}
-                                <DatosGenerales errors={ errors } touched={ touched }  />
-
-                                {/* Campos de datos representante legal----------------------------------------- */}
-                                <RepresentanteLegal errors={ errors } touched={ touched }  />
-                                
-                                {/* Compos especificos del fomulario----------------------------------- */}
-                                <CamposForm009 errors={ errors } touched={ touched } />
-                                                 
-                                {/* Boton de enviar */}
-                                <ButtonSubmitForm />
-                            </Form>
+                             //Componente de formulario Formik modular para autopopular los campos
+                            //Nombre y Apellido de informacion generel, Nombre y Apellido de
+                            //Representante Legal.
+                            <FormComponent
+                                errors={ errors } 
+                                touched={ touched } 
+                                Nombre={ Nombre } 
+                                Apellido={ Apellido } 
+                                setNombre={ setNombre } 
+                                setApellido={ setApellido } 
+                                NombreRepresentante={ NombreRepresentante } 
+                                ApellidoRepresentante={ ApellidoRepresentante }
+                                RNCRepresentante={ RNCRepresentante }
+                                setNombreRepresentante={ setNombreRepresentante } 
+                                setApellidoRepresentante={ setApellidoRepresentante } 
+                                setRNCRepresentante={ setRNCRepresentante }
+                                CamposEspecificos={ CamposForm009 }
+                            />
                         )}
 
                 </Formik> 

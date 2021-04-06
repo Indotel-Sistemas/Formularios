@@ -102,7 +102,7 @@ export const FormComponent = (
                     
                 
                 {/* Compos especificos del fomulario----------------------------------- */}
-                <CamposEspecificos />
+                <CamposEspecificos errors={errors} touched={touched} />
 
                 {/* Boton de enviar */}
                 <ButtonSubmitForm />
