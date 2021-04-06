@@ -291,27 +291,27 @@ export const RepresentanteLegal = (
 }
 
 export const representanteLegalValidations = {
-    CedulaRepresentante: Yup.string()
-    .min(11, 'Debe contener 11 caracteres.')
-    .max(11, 'Debe contener 11 caracteres.'),
-    NombreRepresentante: Yup.string(),
-    ApellidoRepresentante: Yup.string(),
-    RNCRepresentante: Yup.string()
-    .min(9, 'Debe contener 11 caracteres.')
-    .max(9, 'Debe contener 11 caracteres.'),
-    ProvinciaRepresentante: Yup.string().required('Campo requerido'),
-    MunicipioRepresentante: Yup.string().required('Campo requerido'),
-    SectorRepresentante: Yup.string().required('Campo requerido'),
-    CalleRepresentante: Yup.string().required('Campo requerido'),
-    NumeroRepresentante: Yup.number().required('Campo requerido'),
-    ApartamentoRepresentante: Yup.number(),
-    CodigoPostalRepresentante: Yup.number().required('Campo requerido'),
-    CorreoElectronicoRepresentante: Yup.string().email('Debe ingresar un correo valido').required('Campo requerido'),
-    UrlRepresentante: Yup.string(),
-    TelefonoRepresentante: Yup.string()
-    .min(10, 'Debe contener 11 caracteres.')
-    .max(10, 'Debe contener 11 caracteres.')
-    .required('Telefono requerido'),
+    // CedulaRepresentante: Yup.string()
+    // .min(11, 'Debe contener 11 caracteres.')
+    // .max(11, 'Debe contener 11 caracteres.'),
+    // NombreRepresentante: Yup.string(),
+    // ApellidoRepresentante: Yup.string(),
+    // RNCRepresentante: Yup.string()
+    // .min(9, 'Debe contener 11 caracteres.')
+    // .max(9, 'Debe contener 11 caracteres.'),
+    // ProvinciaRepresentante: Yup.string().required('Campo requerido'),
+    // MunicipioRepresentante: Yup.string().required('Campo requerido'),
+    // SectorRepresentante: Yup.string().required('Campo requerido'),
+    // CalleRepresentante: Yup.string().required('Campo requerido'),
+    // NumeroRepresentante: Yup.number().required('Campo requerido'),
+    // ApartamentoRepresentante: Yup.number(),
+    // CodigoPostalRepresentante: Yup.number().required('Campo requerido'),
+    // CorreoElectronicoRepresentante: Yup.string().email('Debe ingresar un correo valido').required('Campo requerido'),
+    // UrlRepresentante: Yup.string(),
+    // TelefonoRepresentante: Yup.string()
+    // .min(10, 'Debe contener 11 caracteres.')
+    // .max(10, 'Debe contener 11 caracteres.')
+    // .required('Telefono requerido'),
 
 }
 

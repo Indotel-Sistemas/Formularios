@@ -1,6 +1,8 @@
 import { Form } from 'formik';
-import React from 'react'
+import React, { useContext } from 'react'
+import { LocalidadContext } from '../../context/LocalidadContext';
 import { getDatosCedula } from '../../helpers/getDatosCedula';
+import { getMunicipios, getSectores } from '../../helpers/getLocalidad';
 import { DatosGenerales } from '../datosGenerales/DatosGenerales';
 import { RepresentanteLegal } from '../representanteLegal/RepresentanteLegal';
 import { ButtonSubmitForm } from '../ui/ButtonSubmitForm';
@@ -19,6 +21,9 @@ export const FormComponent = (
         setApellidoRepresentante, 
         CamposEspecificos
     }) => {
+
+        const {setLocalidades} = useContext(LocalidadContext);
+
     return (
         <>
             <Form 
@@ -45,7 +50,14 @@ export const FormComponent = (
                         setNombreRepresentante('')
                         setApellidoRepresentante('')
                     }
-                }}}
+                }else if(e.target.name === 'Provincia'){
+                    const municipios =  await getMunicipios(e.target.value);
+                    setLocalidades(localidades =>({...localidades, Municipios: municipios}))
+                }else if(e.target.name === 'Municipio'){
+                  const sectores =  await getSectores(e.target.value);
+                  setLocalidades(localidades =>({...localidades, Sectores: sectores}))
+                }
+            }}
             >   
 
                 {/* Campos de datos generales----------------------------------------- */}

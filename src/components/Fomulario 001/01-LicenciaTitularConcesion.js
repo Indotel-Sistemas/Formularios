@@ -30,6 +30,7 @@ const Validations = Yup.object().shape({
 
 
 export const LicenciaTitularConcesion = () => {
+    //Variables para popular campos aon Api cedula y RNC
     //Datos generales
     const [Nombre, setNombre] = useState('');
     const [Apellido, setApellido] = useState('');
@@ -63,24 +64,27 @@ export const LicenciaTitularConcesion = () => {
                             NombreRepresentante,
                             ApellidoRepresentante
                         }
-                        // console.log(JSON.stringify(data, null, 2));
-                        insertarDatosForm001(data);
+                        console.log(JSON.stringify(data, null, 2));
+                        // insertarDatosForm001(data);
                     }}
                     >
 
                         {({ errors, touched }) => (
+                            //Componente de formulario Formik modular para autopopular los campos
+                            //Nombre y Apellido de informacion generel, Nombre y Apellido de
+                            //Representante Legal.
                             <FormComponent
-                            errors={ errors } 
-                            touched={ touched } 
-                            Nombre={ Nombre } 
-                            Apellido={ Apellido } 
-                            setNombre={ setNombre } 
-                            setApellido={ setApellido } 
-                            NombreRepresentante={ NombreRepresentante } 
-                            ApellidoRepresentante={ ApellidoRepresentante }
-                            setNombreRepresentante={ setNombreRepresentante } 
-                            setApellidoRepresentante={ setApellidoRepresentante } 
-                            CamposEspecificos={ CamposForm001 }
+                                errors={ errors } 
+                                touched={ touched } 
+                                Nombre={ Nombre } 
+                                Apellido={ Apellido } 
+                                setNombre={ setNombre } 
+                                setApellido={ setApellido } 
+                                NombreRepresentante={ NombreRepresentante } 
+                                ApellidoRepresentante={ ApellidoRepresentante }
+                                setNombreRepresentante={ setNombreRepresentante } 
+                                setApellidoRepresentante={ setApellidoRepresentante } 
+                                CamposEspecificos={ CamposForm001 }
                             />
                         )}
 

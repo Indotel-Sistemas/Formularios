@@ -1,8 +1,9 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Field } from 'formik';
 import * as Yup from 'yup';
 import { Collapse } from 'react-bootstrap';
 import { IoIosArrowDropdown, IoIosArrowDropup } from "react-icons/io";
+import { LocalidadContext } from '../../context/LocalidadContext';
 
 // EL componente DatosGenarales contiene todos los campos que son consistentes en todos los formularios,
 // usando Formik y Yup, con sus respectivas validaciones para Yup y sus valores iniciales, 
@@ -18,6 +19,7 @@ import { IoIosArrowDropdown, IoIosArrowDropup } from "react-icons/io";
 export const DatosGenerales = ({ errors, touched, Nombre, Apellido}) => {
 
     const [open, setOpen] = useState(true); //Despliega y oculta la seccion de datos generales
+    const { localidades } = useContext(LocalidadContext);
     
     return (
         <>
@@ -109,31 +111,53 @@ export const DatosGenerales = ({ errors, touched, Nombre, Apellido}) => {
                         <p className="form__subtitle">Dirección</p>
                         {/*PROVINCIA--------------------------------------------------------------------------- */}
                         <div className='col-4'>
-                            {/* <label>Provincia</label> */}
-                            <Field name='Provincia' type='text' placeholder="Provincia" className='form-control'  autoComplete="off"/>
+                            <Field as="select"  name="Provincia" className="form-control" autoComplete="off">
+                                <option value="" disabled>Provincia...</option>
+                                {
+                                        localidades.Provincias.map((provincia)=>(
+                                        <option key={provincia.Id} value={provincia.Id}>{provincia.Nombre}</option>
+                                    ))
+                                }
+                            </Field>
                             {errors.Provincia && touched.Provincia ? (
                                 <small className='text-danger'>{errors.Provincia}</small>
                                 ) : null}
                         </div>
+                         
 
                         {/*MUNICIPIO--------------------------------------------------------------------------- */}
                         <div className='col-4'>
-                            {/* <label>Municipio</label> */}
-                            <Field name='Municipio' type='text' placeholder="Municipio" className='form-control' autoComplete="off"/>
+                            <Field as="select"  name="Municipio" className="form-control" autoComplete="off">
+                                <option value="" disabled>Municipio...</option>
+                                {
+                                    localidades.Municipios.map(municipio => (
+                                        <option key={municipio.Id} value={municipio.Id}>{municipio.Descripcion}</option>
+                                    ))
+                                }
+                            </Field>
                             {errors.Municipio && touched.Municipio ? (
                                 <small className='text-danger'>{errors.Municipio}</small>
                                 ) : null}
                         </div>
 
                         {/*SECTOR--------------------------------------------------------------------------- */}
+                                    
                         <div className='col-4'>
-                            {/* <label>Sector</label> */}
-                            <Field name='Sector' type='text' placeholder="Sector" className='form-control'  autoComplete="off"/>
+                            <Field as="select"  name="Sector" className="form-control" autoComplete="off">
+                                <option value="" disabled>Sector...</option>
+                                {
+                                        localidades.Sectores.map((sector)=>(
+                                        <option key={sector.Id} value={sector.Id}>{sector.Descripcion}</option>
+                                    ))
+                                }
+                            </Field>
                             {errors.Sector && touched.Sector ? (
                                 <small className='text-danger'>{errors.Sector}</small>
-                            ) : null}
+                                ) : null}
                         </div>
+
                     </div>
+     
 
                     <div className="mt-4">
                         {/*Calle--------------------------------------------------------------------------- */}
@@ -213,26 +237,26 @@ export const DatosGenerales = ({ errors, touched, Nombre, Apellido}) => {
 
 
 export const datosGeneralesvalidations = {
-    Cedula: Yup.string()
-    .min(11, 'Debe contener 11 caracteres.')
-    .max(11, 'Debe contener 11 caracteres.')
-    .required('Cedula requerida'),
-    Nombre: Yup.string(),
-    Apellido: Yup.string(),
-    TipoSolicitante: Yup.string().required('Tipo requerido'),
-    Provincia: Yup.string().required('Campo requerido'),
-    Municipio: Yup.string().required('Campo requerido'),
-    Sector: Yup.string().required('Campo requerido'),
-    Calle: Yup.string().required('Campo requerido'),
-    Numero: Yup.number().required('Campo requerido'),
-    Apartamento: Yup.number(),
-    CodigoPostal: Yup.number().required('Campo requerido'),
-    CorreoElectronico: Yup.string().email('Debe ingresar un correo valido').required('Campo requerido'),
-    Url: Yup.string(),
-    Telefono: Yup.string()
-    .min(10, 'Debe contener 11 caracteres.')
-    .max(10, 'Debe contener 11 caracteres.')
-    .required('Telefono requerido'),
+    // Cedula: Yup.string()
+    // .min(11, 'Debe contener 11 caracteres.')
+    // .max(11, 'Debe contener 11 caracteres.')
+    // .required('Cedula requerida'),
+    // Nombre: Yup.string(),
+    // Apellido: Yup.string(),
+    // TipoSolicitante: Yup.string().required('Tipo requerido'),
+    // Provincia: Yup.string().required('Campo requerido'),
+    // Municipio: Yup.string().required('Campo requerido'),
+    // Sector: Yup.string().required('Campo requerido'),
+    // Calle: Yup.string().required('Campo requerido'),
+    // Numero: Yup.number().required('Campo requerido'),
+    // Apartamento: Yup.number(),
+    // CodigoPostal: Yup.number().required('Campo requerido'),
+    // CorreoElectronico: Yup.string().email('Debe ingresar un correo valido').required('Campo requerido'),
+    // Url: Yup.string(),
+    // Telefono: Yup.string()
+    // .min(10, 'Debe contener 11 caracteres.')
+    // .max(10, 'Debe contener 11 caracteres.')
+    // .required('Telefono requerido'),
 
 }
 
