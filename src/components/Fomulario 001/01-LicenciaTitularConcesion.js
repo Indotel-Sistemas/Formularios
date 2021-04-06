@@ -12,7 +12,6 @@ import {
     datosGeneralesInitialValues 
 } from "../datosGenerales/DatosGenerales";
 
-
 import { 
     representanteLegalValidations,
     representanteLegalInitialValues 
@@ -27,7 +26,6 @@ const Validations = Yup.object().shape({
     ...datosGeneralesvalidations,
     ...representanteLegalValidations
    });
-
 
 export const LicenciaTitularConcesion = () => {
     //Variables para popular campos aon Api cedula y RNC
@@ -49,13 +47,16 @@ export const LicenciaTitularConcesion = () => {
 
             <div className='divtainer'>
                 <Formik
+
                     initialValues={{ //Valores iniciales del fomrmulario
                         IdFormulario:"001",
                         ...datosGeneralesInitialValues,
                         ...representanteLegalInitialValues,
                         ...CamposForm1InitialValues,
                     }}
-                    validationSchema={Validations}
+
+                    validationSchema={Validations} //validaciones de los campos
+
                     onSubmit={(datos) => { //Valores de los campos en el formulario
          
                         const data = {

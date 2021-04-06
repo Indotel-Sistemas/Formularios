@@ -61,7 +61,10 @@ export const FormComponent = (
                 }else if(e.target.name === 'RNCRepresentante'){
                     if (e.target.value.length === 11 || (e.target.value.length === 9)){ //Si el campo Cedula es correcto
                         const datos = await getRNC(e.target.value); //Obtener datos de API
-                        setNombreRepresentante(datos.Nombre) //Se asinan el valor obtenido a la variable correspondiente
+                        (
+                            datos && //Evita error al no encontrar datos
+                            setNombreRepresentante(datos.Nombre) //Se asinan el valor obtenido a la variable correspondiente
+                        )
                     }else{//Si el campo Cedula es correcto se borran los campos
                         setNombreRepresentante('')
                     }

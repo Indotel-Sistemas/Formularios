@@ -102,7 +102,7 @@ export const RepresentanteLegal = (
                         required={tipoSolicitante === 'Persona física'} 
                         disabled={tipoSolicitante === 'Entidad Jurídica'} 
                         placeholder="Cédula" 
-                        type='number' 
+                        type='text' 
                         className='form-control'  
                         autoComplete="off"
                         />
@@ -122,7 +122,7 @@ export const RepresentanteLegal = (
                             required={tipoSolicitante === 'Entidad Jurídica'} 
                             disabled={tipoSolicitante === 'Persona física'} 
                             placeholder="RNC" 
-                            type='Number' 
+                            type='text' 
                             className='form-control'  
                             autoComplete="off"
                         />
