@@ -1,18 +1,16 @@
 import React, { useState } from 'react'
-import { Formik, Form } from 'formik';
+import { Formik } from 'formik';
 import * as Yup from 'yup';
 import { Link } from 'react-router-dom';
 
 import { insertarDatosForm007 } from '../../helpers/POSTform';
 
 import { 
-    DatosGenerales, 
     datosGeneralesvalidations, 
     datosGeneralesInitialValues 
 } from "../datosGenerales/DatosGenerales";
 
 import { 
-    RepresentanteLegal,
     representanteLegalValidations,
     representanteLegalInitialValues 
 } from '../representanteLegal/RepresentanteLegal';
@@ -21,7 +19,6 @@ import {
     CamposForm007,
     CamposForm7InitialValues
 } from './CamposForm007'
-import { ButtonSubmitForm } from '../ui/ButtonSubmitForm';
 import { FormComponent } from '../estructuraFormFormik/FormComponent';
 
 const Validations = Yup.object().shape({
