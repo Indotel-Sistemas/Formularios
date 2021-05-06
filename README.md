@@ -16,7 +16,7 @@
 ## Requerimientos ⚙️:
 
   * Acceso a API INDOTEL de cedulados.
-  * Acceso a API INDOTEL de localidaes. Provncias, Municipios y Sectores
+  * Acceso a API INDOTEL de localidaes. Provincias, Municipios y Sectores
   * Accesso a API de formularios
 
 ## Herramientas de desarrollo ⚙️:
